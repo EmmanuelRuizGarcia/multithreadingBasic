@@ -44,5 +44,37 @@ namespace multithreadingBasic
             }
             _stopWatch2.Stop(); // Stop the stopwatch.
         }
+
+
+        private Task<string> ConcatString1Task()
+        {
+            _stopWatch1.Restart();  // Start the stopwatch to time the process execution.
+
+            for (int i = 0; i < 50000; i++)
+            {
+                _string1 += i.ToString();
+                _count1++;
+                _mem1 = ((double)GC.GetAllocatedBytesForCurrentThread() / 1024d / 1024d);
+                _time1 = _stopWatch1.Elapsed;
+            }
+            _stopWatch1.Stop(); // Stop the stopwatch.
+            return Task.FromResult(_string1);
+        }
+
+
+        private Task<string> ConcatString2Task()
+        {
+            _stopWatch2.Restart();  // Start the stopwatch to time the process execution.
+
+            for (int i = 0; i < 50000; i++)
+            {
+                _string2.Append(i);
+                _count2++;
+                _mem2 = ((double)GC.GetAllocatedBytesForCurrentThread() / 1024d / 1024d);
+                _time2 = _stopWatch2.Elapsed;
+            }
+            _stopWatch2.Stop(); // Stop the stopwatch.
+            return Task.FromResult(_string2.ToString());
+        }
     }
 }

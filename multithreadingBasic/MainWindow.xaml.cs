@@ -47,7 +47,7 @@ namespace multithreadingBasic
         {
             //ConcatString(); // Concatenate a String type variable 50,000 times.
             //ConcatStringBuilder();  // Concatenate a StringBuilder object 50,000 times.
-            DoConcatenation(5);
+            DoConcatenation(6);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace multithreadingBasic
         /// <para> threadOption: 1 = BackgroundWorker.</para>
         /// </summary>
         /// <param name="threadOption">The option of the threading approach.</param>
-        private void DoConcatenation(int threadOption = 1)
+        private async void DoConcatenation(int threadOption = 1)
         {
             UIDataDispatcher();
 
@@ -78,6 +78,10 @@ namespace multithreadingBasic
                     break;
                 case 5:
                     UseTaskFactoryStartNew();
+                    break;
+                case 6:
+                    GetProperties.String2 = await Task.Run(() => ConcatString2Task());
+                    GetProperties.String1 = await Task.Run(() => ConcatString1Task());
                     break;
             }
         }
