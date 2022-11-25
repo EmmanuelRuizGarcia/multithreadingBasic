@@ -45,7 +45,10 @@ namespace multithreadingBasic
             _stopWatch2.Stop(); // Stop the stopwatch.
         }
 
-
+        /// <summary>
+        /// This method is a Task<string> type method which concatenates a string 50,000 times.
+        /// </summary>
+        /// <returns>Returns a Task.FromResult(_string1)</returns>
         private Task<string> ConcatString1Task()
         {
             _stopWatch1.Restart();  // Start the stopwatch to time the process execution.
@@ -61,7 +64,11 @@ namespace multithreadingBasic
             return Task.FromResult(_string1);
         }
 
-
+        /// <summary>
+        /// This method is a Task<string> type method which concatenates a StringBuilder 
+        /// 50,000 times.
+        /// </summary>
+        /// <returns>Return a Task.FromResult(_string2.ToString())</returns>
         private Task<string> ConcatString2Task()
         {
             _stopWatch2.Restart();  // Start the stopwatch to time the process execution.

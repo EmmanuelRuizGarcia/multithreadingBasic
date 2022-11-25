@@ -47,7 +47,7 @@ namespace multithreadingBasic
         {
             //ConcatString(); // Concatenate a String type variable 50,000 times.
             //ConcatStringBuilder();  // Concatenate a StringBuilder object 50,000 times.
-            DoConcatenation(6);
+            DoConcatenation(7);
         }
 
         /// <summary>
@@ -82,6 +82,9 @@ namespace multithreadingBasic
                 case 6:
                     GetProperties.String2 = await Task.Run(() => ConcatString2Task());
                     GetProperties.String1 = await Task.Run(() => ConcatString1Task());
+                    break;
+                case 7:
+                    UseParallel();
                     break;
             }
         }

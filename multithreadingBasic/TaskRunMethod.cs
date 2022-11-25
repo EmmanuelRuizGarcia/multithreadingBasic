@@ -9,8 +9,12 @@ namespace multithreadingBasic
 {
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Running two tasks by using Task.Run in one method.
+        /// </summary>
         private void UseTaskRun()
         {
+            // Concatenate a string 50,000 times.
             Task.Run(() => ConcatString1())
                 .ContinueWith(result =>
                 {
@@ -20,6 +24,7 @@ namespace multithreadingBasic
                     }));
                 });
 
+            // Concatenate a StringBuilder 50,000 times.
             Task.Run(() => ConcatString2())
                 .ContinueWith(result =>
                 {
