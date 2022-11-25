@@ -33,11 +33,14 @@ namespace multithreadingBasic
         TimeSpan _time2 = new();
         Stopwatch _stopWatch1 = new();
         Stopwatch _stopWatch2 = new();
+        public StringProperties GetProperties = new();
+        DispatcherTimer dispatchTimer = new();
         #endregion
 
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = GetProperties;
         }
 
         private void btn_Go_Click(object sender, RoutedEventArgs e)
@@ -58,6 +61,7 @@ namespace multithreadingBasic
             switch (threadOption)
             {
                 case 1:
+                    UIDataDispatcher(); // Call the Dispatcher method to update data to UI.
                     ActivateBGWorker(); // Defined in the BackgroundWorkerMethod.cs file.
                     break;
             }

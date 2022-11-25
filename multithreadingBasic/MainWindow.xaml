@@ -26,7 +26,7 @@
                Grid.ColumnSpan="2" Grid.Column="0" Foreground="#FFE3850A"/>
         <Label Content="String" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="24" Grid.Row="1" Foreground="#FF0498FB"/>
         <Label Content="StringBuilder" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="24" Grid.Row="1" Foreground="#FF08ED0F" Grid.Column="1"/>
-        <TextBox x:Name="txb_String_RAM" HorizontalAlignment="Left" Margin="122,44,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="37" FontSize="20" RenderTransformOrigin="0.5,0.5" TextAlignment="Center" Text="" IsReadOnly="True">
+        <TextBox x:Name="txb_String_RAM" HorizontalAlignment="Left" Margin="122,44,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="37" FontSize="20" RenderTransformOrigin="0.5,0.5" TextAlignment="Center" Text="{Binding MemoryUsed1, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}" IsReadOnly="True">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,0">
                     <LinearGradientBrush.RelativeTransform>
@@ -42,7 +42,7 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
-        <TextBox x:Name="txb_StringBuilder_RAM" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="37" FontSize="20" Grid.Column="1" Margin="140,44,0,0" TextAlignment="Center" Text="" IsReadOnly="True">
+        <TextBox x:Name="txb_StringBuilder_RAM" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="37" FontSize="20" Grid.Column="1" Margin="140,44,0,0" TextAlignment="Center" Text="{Binding MemoryUsed2, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}" IsReadOnly="True">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,0">
                     <LinearGradientBrush.RelativeTransform>
@@ -75,10 +75,10 @@
         <Label Content="MB" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Margin="349,47,0,0" Width="42" FontWeight="Bold" Grid.Column="1"/>
         <TextBox x:Name="txb_String_Result" HorizontalAlignment="Left" Margin="22,153,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" Height="134" FontSize="20" VerticalScrollBarVisibility="Visible" Text="" IsReadOnly="True"/>
         <TextBox x:Name="txb_StringBuilder_Result" HorizontalAlignment="Left" Margin="44,156,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" Height="134" FontSize="20" Grid.Column="1" VerticalScrollBarVisibility="Visible" Text="" IsReadOnly="True"/>
-        <TextBox x:Name="txb_String_Time" HorizontalAlignment="Left" Margin="121,86,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Height="37" FontSize="20" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="txb_String_Time" HorizontalAlignment="Left" Margin="121,86,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding TimeUsed1, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:c}}" VerticalAlignment="Top" Width="203" Height="37" FontSize="20" TextAlignment="Center" IsReadOnly="True"/>
         <Label Content="Time elapsed" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Margin="20,89,0,0" Width="101"/>
         <Label Content="sec." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Margin="331,89,0,0" Width="42" FontWeight="Bold"/>
-        <TextBox x:Name="txb_StringBuilder_Time" HorizontalAlignment="Left" Margin="140,86,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Height="37" FontSize="20" Grid.Column="1" TextAlignment="Center" IsReadOnly="True"/>
+        <TextBox x:Name="txb_StringBuilder_Time" HorizontalAlignment="Left" Margin="140,86,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding TimeUsed2, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:c}}" VerticalAlignment="Top" Width="203" Height="37" FontSize="20" Grid.Column="1" TextAlignment="Center" IsReadOnly="True"/>
         <Label Content="Time elapsed" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Margin="38,86,0,0" Width="101" Grid.Column="1"/>
         <Label Content="sec." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Margin="349,86,0,0" Width="42" FontWeight="Bold" Grid.Column="1"/>
         <Label Content="Result" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Foreground="#FFF7C706" Margin="22,121,0,0" Width="61" FontWeight="Bold"/>

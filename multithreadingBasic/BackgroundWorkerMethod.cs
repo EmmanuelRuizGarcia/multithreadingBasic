@@ -53,8 +53,8 @@ namespace multithreadingBasic
                 _count1++;
                 _mem1 = ((double)GC.GetAllocatedBytesForCurrentThread() / 1024d / 1024d);
                 _time1 = _stopWatch1.Elapsed;
-                (sender as BackgroundWorker).ReportProgress((i / 50000 * 100));
-                Thread.Sleep(1);
+                //(sender as BackgroundWorker).ReportProgress((i / 50000 * 100));
+                //Thread.Sleep(1);
             }
             _stopWatch1.Stop(); // Stop the stopwatch.
             e.Result = _string1;
@@ -99,8 +99,8 @@ namespace multithreadingBasic
                 _count2++;
                 _mem2 = ((double)GC.GetAllocatedBytesForCurrentThread() / 1024d / 1024d);
                 _time2 = _stopWatch2.Elapsed;
-                (sender as BackgroundWorker).ReportProgress((i / 50000 * 100));
-                Thread.Sleep(1);
+                //(sender as BackgroundWorker).ReportProgress((i / 50000 * 100));
+                //Thread.Sleep(1);
             }
             _stopWatch2.Stop(); // Stop the stopwatch.
             e.Result = _string2;
