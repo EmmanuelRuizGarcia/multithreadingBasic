@@ -47,7 +47,7 @@ namespace multithreadingBasic
         {
             //ConcatString(); // Concatenate a String type variable 50,000 times.
             //ConcatStringBuilder();  // Concatenate a StringBuilder object 50,000 times.
-            DoConcatenation(3);
+            DoConcatenation(5);
         }
 
         /// <summary>
@@ -72,6 +72,12 @@ namespace multithreadingBasic
                     break;
                 case 3:
                     UseThreadPool();
+                    break;
+                case 4:
+                    UseTaskRun();
+                    break;
+                case 5:
+                    UseTaskFactoryStartNew();
                     break;
             }
         }

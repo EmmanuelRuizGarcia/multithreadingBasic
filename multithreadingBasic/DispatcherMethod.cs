@@ -53,7 +53,7 @@ namespace multithreadingBasic
                 }
                 else
                 {
-                    GetProperties.String1 = _string1;
+                    //GetProperties.String1 = _string1;
                 }
                 GetProperties.Count2 = _count2;
                 GetProperties.MemoryUsed2 = _mem2;
@@ -70,7 +70,7 @@ namespace multithreadingBasic
                 }
                 else
                 {
-                    GetProperties.String2 = _string2.ToString();
+                    //GetProperties.String2 = _string2.ToString();
                 }
             }));
         }
