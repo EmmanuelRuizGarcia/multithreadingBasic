@@ -51,6 +51,10 @@ namespace multithreadingBasic
                     tb1.GradientStops.Add(new(Colors.White, _mem1 / 12000));
                     txb_String_RAM.Background = tb1;
                 }
+                else
+                {
+                    GetProperties.String1 = _string1;
+                }
                 GetProperties.Count2 = _count2;
                 GetProperties.MemoryUsed2 = _mem2;
                 GetProperties.TimeUsed2 = _time2;
@@ -63,6 +67,10 @@ namespace multithreadingBasic
                     tb2.GradientStops.Add(new(Colors.Red, _mem1 / 12000));
                     tb2.GradientStops.Add(new(Colors.White, _mem1 / 12000));
                     txb_StringBuilder_RAM.Background = tb2;
+                }
+                else
+                {
+                    GetProperties.String2 = _string2.ToString();
                 }
             }));
         }

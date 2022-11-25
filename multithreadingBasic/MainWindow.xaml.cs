@@ -47,7 +47,7 @@ namespace multithreadingBasic
         {
             //ConcatString(); // Concatenate a String type variable 50,000 times.
             //ConcatStringBuilder();  // Concatenate a StringBuilder object 50,000 times.
-            DoConcatenation();
+            DoConcatenation(3);
         }
 
         /// <summary>
@@ -58,11 +58,20 @@ namespace multithreadingBasic
         /// <param name="threadOption">The option of the threading approach.</param>
         private void DoConcatenation(int threadOption = 1)
         {
+            UIDataDispatcher();
+
             switch (threadOption)
             {
                 case 1:
                     UIDataDispatcher(); // Call the Dispatcher method to update data to UI.
                     ActivateBGWorker(); // Defined in the BackgroundWorkerMethod.cs file.
+                    break;
+                case 2:
+                    Thread1();
+                    Thread2();
+                    break;
+                case 3:
+                    UseThreadPool();
                     break;
             }
         }
